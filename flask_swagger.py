@@ -122,7 +122,7 @@ def _extract_definitions(alist, level=None):
 
 
 def swagger(app, prefix=None, process_doc=_sanitize,
-            from_file_keyword=None, template=None):
+            from_file_keyword='swagger_from_file', template=None):
     """
     Call this from an @app.route method like this
     @app.route('/spec.json')
