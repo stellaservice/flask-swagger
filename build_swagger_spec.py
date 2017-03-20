@@ -49,6 +49,3 @@ def run():
         with open("%s/swagger.json" % args.out_dir, 'w') as f:
             f.write(json.dumps(spec, indent=4))
             f.close()
-
-run()
-
