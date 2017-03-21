@@ -15,6 +15,7 @@ parser.add_argument('--definitions', default=None, help='json definitions file')
 parser.add_argument('--host', default=None)
 parser.add_argument('--base-path', default=None)
 parser.add_argument('--version', default=None, help='Specify a spec version')
+parser.add_argument('--title', default=None, help='The title of the api')
 
 args = parser.parse_args()
 
@@ -41,6 +42,8 @@ def run():
         spec['host'] = args.host
     if args.base_path is not None:
         spec['basePath'] = args.base_path
+    if args.title is not None:
+        spec['info']['title'] = args.title
     if args.version is not None:
         spec['info']['version'] = args.version
     if args.out_dir is None:
