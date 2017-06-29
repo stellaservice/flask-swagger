@@ -38,6 +38,13 @@ def run():
                     template['definitions'][d] = rawdefs[d]
 
     spec = swagger(app, template=template)
+    spec['securityDefinitions'] = {
+        'apiKey': {
+            'type': 'apiKey',
+            'in': 'header',
+            'name': 'X-API-KEY'
+        }
+    }
     if args.host is not None:
         spec['host'] = args.host
     if args.base_path is not None:
